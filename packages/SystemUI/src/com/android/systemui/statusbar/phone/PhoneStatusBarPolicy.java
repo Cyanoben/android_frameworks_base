@@ -456,15 +456,6 @@ public class PhoneStatusBarPolicy {
         }
     };
 
-    private void updateSu() {
-        mService.setIconVisibility(SLOT_SU, mSuController.hasActiveSessions());
-        if (mSuController.hasActiveSessions()) {
-            publishSuCustomTile();
-        } else {
-            unpublishSuCustomTile();
-        }
-    }
-
     private final SuController.Callback mSuCallback = new SuController.Callback() {
         @Override
         public void onSuSessionsChanged() {
